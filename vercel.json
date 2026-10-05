@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "buildCommand": "bun run build",
+  "installCommand": "bun install",
+  "devCommand": "bun run dev",
+  "regions": ["fra1"],
+  "env": {
+    "NEXT_PUBLIC_WORDPRESS_URL": "https://altaha.shop/graphql",
+    "NEXT_PUBLIC_WOOCOMMERCE_PAYMENT_METHOD": "cod"
+  }
+}

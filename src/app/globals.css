@@ -1,0 +1,231 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-onest), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  /* Lumora skin extensions */
+  --color-ink: var(--ink);
+  --color-accent-brand: var(--accent-brand);
+  --color-accent-brand-from: var(--accent-brand-from);
+  --color-accent-brand-to: var(--accent-brand-to);
+  --color-hero-from: var(--hero-from);
+  --color-hero-to: var(--hero-to);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/*
+ * FORMA × Lumora design skin.
+ * Palette: white page, warm stone surfaces (#f1f0ee/#e3e2df), deep ink panels
+ * (#0a0a0a), hairline borders (#e6e5e2) and a single burnt-orange accent
+ * (#b15f2c, gradient #cf8047 → #97501f). Typeface: Onest.
+ */
+:root {
+  --radius: 1rem;
+  --background: #ffffff;
+  --foreground: #111111;
+  --card: #ffffff;
+  --card-foreground: #111111;
+  --popover: #ffffff;
+  --popover-foreground: #111111;
+  --primary: #0a0a0a;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f0ee;
+  --secondary-foreground: #111111;
+  --muted: #f1f0ee;
+  --muted-foreground: #8d8d8d;
+  --accent: #e3e2df;
+  --accent-foreground: #111111;
+  --destructive: oklch(0.577 0.215 27.325);
+  --border: #e6e5e2;
+  --input: #e6e5e2;
+  --ring: #b15f2c;
+  --chart-1: #b15f2c;
+  --chart-2: #8d8d8d;
+  --chart-3: #0a0a0a;
+  --chart-4: #cf8047;
+  --chart-5: #b6b6b6;
+  --sidebar: #f1f0ee;
+  --sidebar-foreground: #111111;
+  --sidebar-primary: #0a0a0a;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e3e2df;
+  --sidebar-accent-foreground: #111111;
+  --sidebar-border: #e6e5e2;
+  --sidebar-ring: #b15f2c;
+  /* Lumora extensions */
+  --ink: #0a0a0a;
+  --accent-brand: #b15f2c;
+  --accent-brand-from: #cf8047;
+  --accent-brand-to: #97501f;
+  --hero-from: #ecebe9;
+  --hero-to: #c9c9c9;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #f2f1ef;
+  --card: #141413;
+  --card-foreground: #f2f1ef;
+  --popover: #141413;
+  --popover-foreground: #f2f1ef;
+  --primary: #f1f0ee;
+  --primary-foreground: #0a0a0a;
+  --secondary: #1a1a19;
+  --secondary-foreground: #f2f1ef;
+  --muted: #1a1a19;
+  --muted-foreground: #a8a6a2;
+  --accent: #222221;
+  --accent-foreground: #f2f1ef;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: #b15f2c;
+  --chart-1: #cf8047;
+  --chart-2: #a8a6a2;
+  --chart-3: #f1f0ee;
+  --chart-4: #97501f;
+  --chart-5: #6b6a68;
+  --sidebar: #141413;
+  --sidebar-foreground: #f2f1ef;
+  --sidebar-primary: #f1f0ee;
+  --sidebar-primary-foreground: #0a0a0a;
+  --sidebar-accent: #222221;
+  --sidebar-accent-foreground: #f2f1ef;
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: #b15f2c;
+  /* Lumora extensions (dark) */
+  --ink: #161615;
+  --accent-brand: #cf8047;
+  --accent-brand-from: #d98f57;
+  --accent-brand-to: #b15f2c;
+  --hero-from: #191918;
+  --hero-to: #0d0d0c;
+}
+
+/*
+ * Lumora adaptive grid — the root font-size scales with the viewport so the
+ * rem-based layout stays proportional at every width.
+ */
+@media (max-width: 1920px) {
+  html {
+    font-size: 0.833333vw; /* base 1920 */
+  }
+}
+@media (max-width: 1440px) {
+  html {
+    font-size: 1.111111vw; /* base 1440 */
+  }
+}
+@media (max-width: 1024px) {
+  html {
+    font-size: 1.5625vw; /* base 1024 */
+  }
+}
+@media (max-width: 640px) {
+  html {
+    font-size: 4.444444vw; /* base 360 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: #0a0a0a;
+    color: #ffffff;
+  }
+  .dark ::selection {
+    background: #f1f0ee;
+    color: #0a0a0a;
+  }
+  /* Arabic typography (RTL) */
+  html[dir="rtl"] body {
+    font-family: var(--font-noto-arabic), var(--font-onest), ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: 0 !important;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  /* thin elegant scrollbars for scroll areas */
+  .thin-scrollbar::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  .thin-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .thin-scrollbar::-webkit-scrollbar-thumb {
+    background: #d5d3cf;
+    border-radius: 999px;
+  }
+  .dark .thin-scrollbar::-webkit-scrollbar-thumb {
+    background: oklch(0.4 0.008 80);
+  }
+  /* Lumora hero surface — soft warm gradient (token-driven, theme aware) */
+  .hero-surface {
+    background: linear-gradient(180deg, var(--hero-from) 0%, var(--hero-to) 100%);
+  }
+  .marquee-track {
+    animation: marquee 32s linear infinite;
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  html[dir="rtl"] .marquee-track {
+    animation-direction: reverse;
+  }
+}

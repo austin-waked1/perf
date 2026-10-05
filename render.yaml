@@ -1,0 +1,29 @@
+# Render Blueprint for the FORMA storefront (frontend-only — no DB).
+# Docs: https://render.com/docs/blueprints
+#
+# How to use:
+#   1. Push this repo to GitHub.
+#   2. On Render: New → Blueprint → pick the repo.
+#   3. Render reads this file and provisions the web service.
+#   4. After it's live, open the URL and verify.
+
+services:
+  - type: web
+    name: forma-store
+    runtime: node
+    plan: free
+    region: frankfurt
+    branch: main
+    buildCommand: bun install && bun run build
+    startCommand: bun run start
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_WORDPRESS_URL
+        value: https://altaha.shop/graphql
+      - key: NEXT_PUBLIC_WOOCOMMERCE_PAYMENT_METHOD
+        value: cod
+      - key: BUN_INSTALL
+        value: "1"
